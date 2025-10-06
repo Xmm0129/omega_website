@@ -15,12 +15,12 @@ export default function Home() {
     if (images.length === 0) {
       // 如果没有上传的图片，显示默认图片
       return [
-        { image: '/cat-photo-1.jpg', text: '欧米伽的日常' },
-        { image: '/cat-photo-2.jpg', text: '阳光下的慵懒' },
-        { image: '/cat-photo-3.jpg', text: '玩具时间' },
-        { image: '/cat-photo-4.jpg', text: '窗台观鸟' },
-        { image: '/cat-photo-5.jpg', text: '纸箱冒险' },
-        { image: '/cat-photo-6.jpg', text: '美梦时光' }
+        { image: '/omega1.jpg', text: '欧米伽的日常' },
+        { image: '/omega2.jpg', text: '阳光下的慵懒' },
+        { image: '/omega3.jpg', text: '玩具时间' },
+        { image: '/omega4.jpg', text: '窗台观鸟' },
+        { image: '/omega5.jpg', text: '纸箱冒险' },
+        { image: '/omega6.jpg', text: '美梦时光' }
       ];
     }
     
