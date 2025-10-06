@@ -40,7 +40,7 @@ export default function TestGlass() {
         <h1 className="text-4xl text-primary font-handwriting text-center mb-12">
           玻璃态图标效果演示
         </h1>
-        <GlassIcons items={iconItems} />
+        <GlassIcons items={iconItems} className="" />
       </div>
     </div>
   );

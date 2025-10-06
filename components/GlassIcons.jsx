@@ -9,7 +9,7 @@ const gradientMapping = {
   green: 'linear-gradient(hsl(123, 90%, 40%), hsl(108, 90%, 40%))'
 };
 
-const GlassIcons = ({ items, className }) => {
+const GlassIcons = ({ items, className = '' }) => {
   const getBackgroundStyle = color => {
     if (gradientMapping[color]) {
       return { background: gradientMapping[color] };
