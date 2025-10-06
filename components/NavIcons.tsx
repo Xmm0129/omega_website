@@ -6,11 +6,11 @@ export default function NavIcons() {
   const [activeIndex, setActiveIndex] = useState(0);
   
   const items = [
+    { label: '🏠 主页', href: '#home' },
     { label: '🐱 关于我', href: '#about' },
     { label: '🗺️ 我的冒险', href: '#adventures' },
     { label: '🧶 我的玩具', href: '#toys' },
     { label: '📜 我的宣言', href: '#manifesto' },
-    { label: '📸 我的相册', href: '#gallery' },
   ];
 
   const handleClick = (index: number, href: string) => {

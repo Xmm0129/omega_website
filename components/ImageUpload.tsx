@@ -1,6 +1,7 @@
 'use client'
 
-import { useState, useRef, useCallback } from 'react'
+import { useState, useRef } from 'react'
+import Image from 'next/image'
 import { supabase, BUCKET_NAME } from '@/lib/supabase'
 
 interface ImageUploadProps {
@@ -49,7 +50,7 @@ export default function ImageUpload({ onUploadSuccess, onUploadError }: ImageUpl
       const fileName = `${Date.now()}-${Math.random().toString(36).substring(2)}.${fileExt}`
       
       // 上传文件
-      const { data, error } = await supabase.storage
+      const { error } = await supabase.storage
         .from(BUCKET_NAME)
         .upload(fileName, file)
 
@@ -75,13 +76,14 @@ export default function ImageUpload({ onUploadSuccess, onUploadError }: ImageUpl
         onUploadSuccess(publicUrl)
       }
 
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error('上传错误:', error)
-      showMessage(`上传失败: ${error.message}`, 'error')
+      const errorMessage = error instanceof Error ? error.message : '上传失败'
+      showMessage(`上传失败: ${errorMessage}`, 'error')
       
       // 通知父组件
       if (onUploadError) {
-        onUploadError(error.message)
+        onUploadError(errorMessage)
       }
     } finally {
       setTimeout(() => {
@@ -182,9 +184,11 @@ export default function ImageUpload({ onUploadSuccess, onUploadError }: ImageUpl
           <div className="space-y-4">
             {previewUrl ? (
               <div className="relative">
-                <img 
+                <Image 
                   src={previewUrl} 
                   alt="预览" 
+                  width={128}
+                  height={128}
                   className="w-32 h-32 object-cover rounded-lg mx-auto"
                 />
                 <div className="absolute inset-0 bg-black/50 rounded-lg flex items-center justify-center">
