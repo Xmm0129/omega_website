@@ -8,7 +8,7 @@
 /* 自定义字体 - 三极破魔体 */
 @font-face {
   font-family: 'SanJiPoMoTi';
-  src: url('/fonts/SanJiPoMoTi-2.ttf') format('truetype');
+  src: url('/SanJiPoMoTi-2.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -36,6 +36,12 @@ body {
 
 .font-custom {
   font-family: 'SanJiPoMoTi', cursive, sans-serif;
+}
+
+.font-title {
+  font-family: 'SanJiPoMoTi', cursive, sans-serif;
+  font-weight: bold;
+  letter-spacing: 0.05em;
 }
 
 @theme inline {
