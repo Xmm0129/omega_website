@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
+
+@plugin 'tailwindcss-animate';
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+/* 自定义字体 - 三极破魔体 */
+@font-face {
+  font-family: 'SanJiPoMoTi';
+  src: url('/fonts/SanJiPoMoTi-2.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --color-primary: #06b6d4;
+  --color-secondary: #0ea5e9;
+  --font-family-handwriting: 'Gochi Hand', cursive;
+  --font-family-custom: 'SanJiPoMoTi', cursive;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #171717;
+  font-family: 'SanJiPoMoTi', 'Gochi Hand', cursive, sans-serif;
+}
+
+.font-handwriting {
+  font-family: 'Gochi Hand', cursive;
+}
+
+.font-custom {
+  font-family: 'SanJiPoMoTi', cursive, sans-serif;
+}
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.625rem;
+}
